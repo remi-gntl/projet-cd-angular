@@ -1,0 +1,16 @@
+<div *ngIf="theCd" class="thetheCd-card" [ngClass]="{'theCdadded': theCd.onsale === true}">
+    <h3>{{theCd.title | uppercase}}</h3>
+    <p>Sortie le : {{theCd.dateDeSortie | date: 'dd/MM/yyyy'}}</p>
+    <p>Auteur / Groupe : {{theCd.author}}</p>
+    <p>Prix : {{theCd.price | currency: 'EUR'}}</p>
+    <p>
+        En stock : <span [ngStyle]="{ color: 'rgb(0, ' + theCd.quantite + ',0)'}"> Quantité : {{theCd.quantite}}</span>
+        <button (click)="onAddCD()">Ajouter une unité</button>
+    </p>
+    <p *ngIf="cd"> <!-- Ce lien n'apparaîtra que dans la liste, pas en affichage détaillé -->
+        <a routerLink="/cd/{{theCd.id}}" class="button">
+            <button>Voir le détail</button>
+        </a>
+    </p>
+    <img [src]="theCd.thumbnail" [alt]="theCd.title"/>
+</div>
