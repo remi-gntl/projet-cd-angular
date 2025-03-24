@@ -1,59 +1,56 @@
-# TDTP1
+# Projet Angular - Gestion de Catalogue de CDs
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+Ce projet a été développé dans le cadre du module R4.A.10 Compléments Web (Framework Angular) à l'IUT de Bayonne.
 
-## Development server
+## Description du Projet
 
-To start a local development server, run:
+Application de visualisation et gestion d'un catalogue de CDs développée progressivement à travers plusieurs TD.
 
-```bash
-ng serve
-```
+## Structure du Projet
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+L'application a été construite de manière incrémentale à travers les TD 1, 2 et 3, chacun abordant des concepts spécifiques d'Angular.
 
-## Code scaffolding
+## TD1-TD2 : Principes fondamentaux, composants et directives
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Concepts abordés :
+- Installation d'Angular CLI
+- Structure d'un projet Angular
+- Création de composants
+- Utilisation des templates et styles (SCSS)
+- Données et contenu dynamique
+- Liaison de données (binding)
+- Directives structurelles (ngIf, ngFor)
+- Cycle de vie des composants
+- Communication entre composants parent-enfant (Input)
+- Mise en forme des données avec les pipes
 
-```bash
-ng generate component component-name
-```
+### Fonctionnalités implémentées :
+- Structure de base de l'application avec des composants
+- Modèle de données CD
+- Affichage d'une liste de CDs
+- Affichage individuel des CDs avec leurs détails
+- Filtrage des CDs en fonction de leur quantité
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## TD3 : Services, injection de dépendance et routage
 
-```bash
-ng generate --help
-```
+### Concepts abordés :
+- Services Angular
+- Injection de dépendance
+- Patron Singleton
+- Routage et navigation
+- Routes paramétrées
+- Navigation programmatique
+- ActivatedRoute pour récupérer les paramètres d'URL
 
-## Building
+### Fonctionnalités implémentées :
+- Service centralisé pour la gestion des CDs
+- Menu de navigation
+- Plusieurs vues/pages (Accueil, Liste de CDs)
+- Navigation entre les pages
+- Affichage détaillé d'un CD en pleine page via une route paramétrée
+- Récupération d'un CD spécifique grâce à son ID
 
-To build the project run:
+## Auteur
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Rémi GENTIL**
+Ce projet est destiné à des fins éducatives dans le cadre du cours de Compléments Web (Framework Angular) à l'IUT de Bayonne.
