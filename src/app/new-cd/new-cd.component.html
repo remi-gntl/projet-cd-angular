@@ -69,7 +69,7 @@
             <div class="form-group">
                 <label for="dateDeSortie">Date de sortie</label>
                 <div class="input">
-                    <input id="dateDeSortie" class="form-control" type="text" formControlName="dateDeSortie"/>
+                    <input id="dateDeSortie" class="form-control" type="date" formControlName="dateDeSortie"/>
                     <div *ngIf="formulaire.get('dateDeSortie')?.invalid && formulaire.get('dateDeSortie')?.dirty ||
                         formulaire.get('dateDeSortie')?.touched">
                         <small class="text-danger" *ngIf="formulaire.get('dateDeSortie')?.hasError('required')">
@@ -98,7 +98,7 @@
                 </div>
             </div>
             
-            <button type="submit" [disabled]="formulaire.invalid">Ajouter</button>
+            <button (click)="addCD()" type="submit" [disabled]="formulaire.invalid">Ajouter</button>
         </form>
     </section>
     <section class="subForm visuForm">
@@ -112,4 +112,4 @@
             <img [src]="currentCD.thumbnail" alt="{{ currentCD.title }}">
         </div>
     </section>
-</div>
+</div>git 

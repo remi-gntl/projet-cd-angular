@@ -1,6 +1,8 @@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { CD } from '../models/cd.model';
+import { CdsService } from '../services/cds.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +18,7 @@ export class NewCDComponent implements OnInit {
   
   thumbRegex = new RegExp('https?:\/\/.*\.(?:png|jpg|jpeg|gif|svg|webp)$');
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private cdsService: CdsService, private router: Router) { }
   
   ngOnInit(): void {
     this.formulaire = this.formBuilder.group({       
@@ -41,5 +43,31 @@ export class NewCDComponent implements OnInit {
       };
     });
   }
+
+  addCD(): void {
+    let newCd: CD = {
+      id: 0,
+      title: this.formulaire.get('title')?.value,
+      author: this.formulaire.get('author')?.value,
+      thumbnail: this.formulaire.get('thumbnail')?.value,
+      dateDeSortie: this.formulaire.get('dateDeSortie')?.value,
+      quantite: this.formulaire.get('quantite')?.value,
+      price: this.formulaire.get('price')?.value,
+      onsale: false
+    };
+
+    this.cdsService.addCD(newCd).subscribe( {
+      next : cd =>
+      {
+        this.router.navigateByUrl('/cds')
+      },
+      error : err =>
+      {
+        console.error('Observable ajout CD à émis une erreur : ' + err);
+        alert ("Désolé le CD n'a pas pu etre ajouté");
+      }
+    });
+  }
+
 }
 

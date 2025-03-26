@@ -10,6 +10,8 @@ import { HeaderComponent } from './header/header.component';
 import { ListCDComponent } from './list-cd/list-cd.component';
 import { HomeComponent } from './home/home.component';
 import { NewCDComponent } from './new-cd/new-cd.component';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { NewCDComponent } from './new-cd/new-cd.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
